@@ -1,0 +1,9 @@
+# Nginx logs
+**.log
+
+# Generated files
+**.key
+**.crt
+**.csr
+**.pem
+**.srl
