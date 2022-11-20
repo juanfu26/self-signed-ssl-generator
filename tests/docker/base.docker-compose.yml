@@ -1,0 +1,13 @@
+services:
+
+  hmi:
+    container_name: hmi
+    image: httpd:2.4-alpine
+
+  proxy:
+    container_name: proxy
+    image: juanfu26/tssl-proxy
+    build:
+      context: ../proxy
+    depends_on:
+      - hmi

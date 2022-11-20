@@ -1,0 +1,21 @@
+services:
+
+  hmi:
+    environment:
+      - TZ=UTC
+    ports:
+      - 8080:8080
+    volumes:
+      [ "../hmi/app:/usr/local/apache2/htdocs/",
+        "../hmi/my-httpd.conf:/usr/local/apache2/conf/httpd.conf" ]
+
+  proxy:
+    environment:
+      - ENV=DEV
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      [ "../proxy/certs:/certs",
+        "../proxy/conf.d:/etc/nginx/conf.d",
+        "../proxy/log:/var/log/nginx/"]
