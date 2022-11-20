@@ -1,0 +1,20 @@
+[req]
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+prompt = no
+
+[req_distinguished_name]
+C = ES
+ST = Murcia
+L = Murcia
+O  = juanfu26
+OU = ssl
+CN = mydomain.local
+
+[v3_req]
+keyUsage = keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = mydomain.local
+DNS.2 = *.mydomain.local
